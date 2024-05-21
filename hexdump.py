@@ -28,7 +28,6 @@ def read_file_contents(filename: str) -> None:
     Read the contents of the file passed in and display in hexadecimal.
     """
     buffer = read_file_as_bytes(filename)
-    offset = 0
 
     for i in range(0, len(buffer), 16):
         chunk = bytearray(buffer[i:i + 16])
@@ -38,8 +37,6 @@ def read_file_contents(filename: str) -> None:
             " ".join("{:02x}".format(x) for x in chunk[8:]),
             "".join(chr(x) if 32 <= x < 127 else "." for x in chunk),
         )
-
-        offset += 16
         print(line)
     print("{:08x}".format(len(buffer)))
 
