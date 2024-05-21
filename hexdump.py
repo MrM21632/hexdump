@@ -11,6 +11,7 @@ def read_license_file() -> str:
         contents = license_file.read()
     return contents
 
+
 def read_file_as_bytes(filename: str) -> bytearray:
     """
     Read the contents of the file into a byte array.
